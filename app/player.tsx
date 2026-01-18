@@ -36,11 +36,13 @@ export default function Player({ playerNum }: { playerNum: number }) {
   };
 
   const handleDiceRoll = () => {
-    setDiceOrCoinResult(`Dice result is ${Math.floor(Math.random() * 6) + 1 }`);
+    setDiceOrCoinResult(`Dice result is ${Math.floor(Math.random() * 6) + 1}`);
   };
 
   const handleCoinFlip = () => {
-    setDiceOrCoinResult(`Coin flip result is ${Math.round(Math.random()) ? "heads" : "tails"}`);
+    setDiceOrCoinResult(
+      `Coin flip result is ${Math.round(Math.random()) ? "heads" : "tails"}`,
+    );
   };
 
   const handleClearDiceOrCoinResult = () => {
@@ -48,7 +50,7 @@ export default function Player({ playerNum }: { playerNum: number }) {
   };
 
   return (
-    <div className="flex w-full flex-col rounded-md m-4 p-4 shadow-md bg-blue-50">
+    <div className="flex flex-col rounded-md m-4 p-4 shadow-md bg-blue-50">
       <span className="flex text-3xl p-1 px-8 text-white text-center rounded-md w-full align-text-top uppercase bg-gradient-to-r from-blue-600 box-decoration-slice  to-blue-400 h-fit">
         player {playerNum}:{" "}
         <CountUp
